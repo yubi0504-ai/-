@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SENSCE | 스마트 홈 가전</title>
+  <meta name="description" content="SENSCE — 당신의 공간을 더 스마트하게. 프리미엄 로봇청소기와 스마트 홈 가전을 만나보세요." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- 네비게이션 -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo" id="nav-logo-link">
+        <span class="logo-icon">◎</span>
+        <span class="logo-text">SENSCE</span>
+      </a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#hero" class="nav-link" id="nav-home">홈</a></li>
+        <li><a href="#products" class="nav-link" id="nav-products">제품</a></li>
+        <li><a href="#detail-1" class="nav-link" id="nav-detail1">스테이션 시리즈</a></li>
+        <li><a href="#detail-2" class="nav-link" id="nav-detail2">독 시리즈</a></li>
+        <li><a href="#contact" class="nav-link" id="nav-contact">문의</a></li>
+      </ul>
+      <button class="nav-cta" id="nav-cta-btn">구매하기</button>
+      <button class="hamburger" id="hamburger-btn" aria-label="메뉴 열기">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 히어로 섹션 -->
+  <section class="hero" id="hero">
+    <!-- 슬라이드 이미지들 -->
+    <div class="hero-slides" id="hero-slides">
+      <div class="hero-slide active" style="background-image: url('main /image 13.png')"></div>
+      <div class="hero-slide" style="background-image: url('main /image 14.png')"></div>
+      <div class="hero-slide" style="background-image: url('main /image 15.png')"></div>
+      <div class="hero-slide" style="background-image: url('main /image 16.png')"></div>
+      <div class="hero-slide" style="background-image: url('main /image 17.png')"></div>
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow" id="hero-eyebrow">NEW ARRIVAL 2025</p>
+      <h1 class="hero-title" id="hero-title">
+        청소의 미래,<br />
+        <span class="hero-gradient">지금 여기에</span>
+      </h1>
+      <p class="hero-subtitle" id="hero-subtitle">
+        스스로 생각하고, 스스로 청소하고, 스스로 비우는<br />
+        차세대 로봇청소기 SENSCE를 경험하세요.
+      </p>
+      <div class="hero-buttons">
+        <a href="#products" class="btn-primary" id="hero-discover-btn">제품 살펴보기</a>
+        <a href="#detail-1" class="btn-secondary" id="hero-detail-btn">자세히 보기 →</a>
+      </div>
+    </div>
+
+    <!-- 슬라이드 인디케이터 -->
+    <div class="slide-indicators" id="slide-indicators">
+      <button class="indicator active" id="indicator-0" data-index="0"></button>
+      <button class="indicator" id="indicator-1" data-index="1"></button>
+      <button class="indicator" id="indicator-2" data-index="2"></button>
+      <button class="indicator" id="indicator-3" data-index="3"></button>
+      <button class="indicator" id="indicator-4" data-index="4"></button>
+    </div>
+
+    <!-- 스크롤 유도 -->
+    <div class="scroll-hint" id="scroll-hint">
+      <span>스크롤</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- 브랜드 소개 띠 -->
+  <div class="ticker-wrap" id="ticker-section">
+    <div class="ticker">
+      <span>스마트 홈 가전</span>
+      <span class="dot">◎</span>
+      <span>자동 먼지비움</span>
+      <span class="dot">◎</span>
+      <span>AI 맵핑 기술</span>
+      <span class="dot">◎</span>
+      <span>프리미엄 디자인</span>
+      <span class="dot">◎</span>
+      <span>스마트 홈 가전</span>
+      <span class="dot">◎</span>
+      <span>자동 먼지비움</span>
+      <span class="dot">◎</span>
+      <span>AI 맵핑 기술</span>
+      <span class="dot">◎</span>
+      <span>프리미엄 디자인</span>
+      <span class="dot">◎</span>
+    </div>
+  </div>
+
+  <!-- 제품 하이라이트 섹션 -->
+  <section class="products" id="products">
+    <div class="section-header">
+      <p class="section-eyebrow">OUR PRODUCTS</p>
+      <h2 class="section-title">당신의 라이프스타일을<br />위한 선택</h2>
+      <p class="section-desc">두 가지 프리미엄 시리즈로 다양한 공간과 취향에 맞는 청소 경험을 제공합니다.</p>
+    </div>
+
+    <div class="product-cards" id="product-cards">
+      <!-- 제품 카드 1 -->
+      <div class="product-card" id="product-card-1">
+        <div class="card-image-wrap">
+          <img src="sensce 1/image 7.png" alt="SENSCE Station — 로봇청소기 스테이션 시리즈" class="card-img" loading="lazy" />
+          <div class="card-badge" id="card-badge-1">BEST SELLER</div>
+        </div>
+        <div class="card-body">
+          <p class="card-category">스테이션 시리즈</p>
+          <h3 class="card-title">SENSCE Station</h3>
+          <p class="card-desc">자동 먼지비움 스테이션과 함께하는 완전 자동 청소 시스템. 청소 후 귀찮은 먼지통 비움까지 모두 자동으로.</p>
+          <div class="card-features">
+            <span class="feature-tag">자동 먼지비움</span>
+            <span class="feature-tag">AI 장애물 감지</span>
+            <span class="feature-tag">앱 연동</span>
+          </div>
+          <a href="#detail-1" class="card-btn" id="card-btn-1">자세히 보기 →</a>
+        </div>
+      </div>
+
+      <!-- 제품 카드 2 -->
+      <div class="product-card" id="product-card-2">
+        <div class="card-image-wrap">
+          <img src="sensce 2/image 10.png" alt="SENSCE Dock — 로봇청소기 독 시리즈" class="card-img" loading="lazy" />
+          <div class="card-badge new" id="card-badge-2">NEW</div>
+        </div>
+        <div class="card-body">
+          <p class="card-category">독 시리즈</p>
+          <h3 class="card-title">SENSCE Dock</h3>
+          <p class="card-desc">인테리어와 하나가 되는 가구형 도킹 스테이션. 공간을 해치지 않으면서도 완벽한 청소 성능을 유지합니다.</p>
+          <div class="card-features">
+            <span class="feature-tag">가구형 디자인</span>
+            <span class="feature-tag">자동 충전</span>
+            <span class="feature-tag">음성 제어</span>
+          </div>
+          <a href="#detail-2" class="card-btn" id="card-btn-2">자세히 보기 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 스펙 카운터 섹션 -->
+  <section class="stats" id="stats">
+    <div class="stats-grid">
+      <div class="stat-item" id="stat-1">
+        <span class="stat-number" data-target="99">0</span><span class="stat-unit">%</span>
+        <p class="stat-label">먼지 흡입률</p>
+      </div>
+      <div class="stat-item" id="stat-2">
+        <span class="stat-number" data-target="180">0</span><span class="stat-unit">분</span>
+        <p class="stat-label">연속 사용 시간</p>
+      </div>
+      <div class="stat-item" id="stat-3">
+        <span class="stat-number" data-target="280">0</span><span class="stat-unit">㎡</span>
+        <p class="stat-label">최대 청소 면적</p>
+      </div>
+      <div class="stat-item" id="stat-4">
+        <span class="stat-number" data-target="45">0</span><span class="stat-unit">dB</span>
+        <p class="stat-label">초저소음 운전</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 상세페이지 1: 스테이션 시리즈 -->
+  <section class="detail-section" id="detail-1">
+    <div class="detail-eyebrow-wrap">
+      <p class="section-eyebrow">STATION SERIES</p>
+    </div>
+    <div class="detail-layout detail-layout--left">
+      <div class="detail-images" id="detail1-images">
+        <div class="detail-main-img-wrap">
+          <img src="sensce 1/image 7.png" alt="SENSCE Station 스테이션 시리즈 - 자동 먼지비움" class="detail-main-img"
+            id="detail1-img-main" loading="lazy" />
+        </div>
+        <div class="detail-sub-img-wrap">
+          <img src="sensce 1/image 12.png" alt="SENSCE Station 공기청정 기능" class="detail-sub-img" id="detail1-img-sub"
+            loading="lazy" />
+        </div>
+      </div>
+      <div class="detail-content" id="detail1-content">
+        <h2 class="detail-title">SENSCE Station</h2>
+        <p class="detail-tagline">청소를 잊게 만드는 경험</p>
+        <p class="detail-desc">
+          SENSCE Station은 단순한 로봇청소기가 아닙니다. 청소가 끝난 후 먼지통을 자동으로 비우는 스테이션 시스템으로,
+          한번 설치하면 수 주간 신경 쓸 필요 없이 언제나 깨끗한 집을 유지할 수 있습니다.
+        </p>
+        <ul class="detail-features-list" id="detail1-features">
+          <li class="detail-feature-item">
+            <div class="feature-icon">✦</div>
+            <div>
+              <strong>자동 먼지비움 스테이션</strong>
+              <p>청소 완료 후 자동으로 먼지를 수거해 최대 60일간 비울 필요 없음</p>
+            </div>
+          </li>
+          <li class="detail-feature-item">
+            <div class="feature-icon">✦</div>
+            <div>
+              <strong>공기청정 복합 기능</strong>
+              <p>HEPA 필터로 바닥 청소와 동시에 공기 중 미세먼지까지 제거</p>
+            </div>
+          </li>
+          <li class="detail-feature-item">
+            <div class="feature-icon">✦</div>
+            <div>
+              <strong>AI 정밀 맵핑</strong>
+              <p>레이저 라이다 센서로 공간을 정밀하게 맵핑하여 최적 경로로 청소</p>
+            </div>
+          </li>
+        </ul>
+        <div class="detail-cta-wrap">
+          <a href="#contact" class="btn-primary" id="detail1-cta-btn">구매 문의하기</a>
+          <span class="detail-price" id="detail1-price">₩ 1,290,000~</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 상세페이지 2: 독 시리즈 -->
+  <section class="detail-section detail-section--dark" id="detail-2">
+    <div class="detail-eyebrow-wrap">
+      <p class="section-eyebrow light">DOCK SERIES</p>
+    </div>
+    <div class="detail-layout detail-layout--right">
+      <div class="detail-content" id="detail2-content">
+        <h2 class="detail-title light">SENSCE Dock</h2>
+        <p class="detail-tagline light">공간과 하나가 되는 청소기</p>
+        <p class="detail-desc light">
+          SENSCE Dock은 가구처럼 자연스럽게 인테리어에 스며듭니다.
+          아름다운 가구형 도킹 스테이션은 공간의 품격을 높이면서도,
+          고성능 청소 시스템을 숨기고 있습니다.
+        </p>
+        <ul class="detail-features-list" id="detail2-features">
+          <li class="detail-feature-item light">
+            <div class="feature-icon light">✦</div>
+            <div>
+              <strong>가구형 인테리어 설계</strong>
+              <p>북쉘프 디자인의 도킹 스테이션으로 거실 어디서나 자연스럽게</p>
+            </div>
+          </li>
+          <li class="detail-feature-item light">
+            <div class="feature-icon light">✦</div>
+            <div>
+              <strong>무선 자동 충전</strong>
+              <p>도킹 시 자동으로 충전을 시작, 항상 100% 상태를 유지</p>
+            </div>
+          </li>
+          <li class="detail-feature-item light">
+            <div class="feature-icon light">✦</div>
+            <div>
+              <strong>음성 & 앱 통합 제어</strong>
+              <p>AI 스피커 및 스마트홈 앱과 연동하여 음성으로 간편하게 제어</p>
+            </div>
+          </li>
+        </ul>
+        <div class="detail-cta-wrap">
+          <a href="#contact" class="btn-primary" id="detail2-cta-btn">구매 문의하기</a>
+          <span class="detail-price light" id="detail2-price">₩ 1,590,000~</span>
+        </div>
+      </div>
+      <div class="detail-images" id="detail2-images">
+        <div class="detail-main-img-wrap">
+          <img src="sensce 2/image 10.png" alt="SENSCE Dock — 가구형 도킹 스테이션" class="detail-main-img" id="detail2-img-main"
+            loading="lazy" />
+        </div>
+        <div class="detail-sub-imgs">
+          <img src="sensce 2/image 8.png" alt="SENSCE Dock 라이프스타일 이미지 1" class="detail-thumb" id="detail2-img-thumb1"
+            loading="lazy" />
+          <img src="sensce 2/image 11.png" alt="SENSCE Dock 라이프스타일 이미지 2" class="detail-thumb" id="detail2-img-thumb2"
+            loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 문의 / CTA 섹션 -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <p class="section-eyebrow">CONTACT US</p>
+      <h2 class="contact-title">지금 바로 경험해보세요</h2>
+      <p class="contact-desc">전국 300개 이상의 체험 매장에서 SENSCE를 직접 체험하거나, 온라인으로 간편하게 구매하세요.</p>
+      <form class="contact-form" id="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="input-name">이름</label>
+            <input type="text" id="input-name" placeholder="홍길동" required />
+          </div>
+          <div class="form-group">
+            <label for="input-phone">연락처</label>
+            <input type="tel" id="input-phone" placeholder="010-0000-0000" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="input-product">관심 제품</label>
+          <select id="input-product">
+            <option value="">제품을 선택해주세요</option>
+            <option value="station">SENSCE Station</option>
+            <option value="dock">SENSCE Dock</option>
+            <option value="both">두 제품 모두</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="input-message">문의 내용</label>
+          <textarea id="input-message" rows="4" placeholder="문의하실 내용을 입력해주세요."></textarea>
+        </div>
+        <button type="submit" class="btn-primary form-submit" id="form-submit-btn">문의 보내기</button>
+      </form>
+      <div class="contact-success" id="contact-success">
+        <div class="success-icon">✓</div>
+        <p>문의가 접수되었습니다.<br />빠른 시일 내 연락드리겠습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="footer" id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">◎</span>
+        <span class="logo-text">SENSCE</span>
+        <p class="footer-tagline">스마트 홈 가전의 새로운 기준</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>제품</h4>
+          <ul>
+            <li><a href="#detail-1" id="footer-station-link">SENSCE Station</a></li>
+            <li><a href="#detail-2" id="footer-dock-link">SENSCE Dock</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>회사</h4>
+          <ul>
+            <li><a href="#" id="footer-about-link">회사 소개</a></li>
+            <li><a href="#" id="footer-news-link">뉴스룸</a></li>
+            <li><a href="#contact" id="footer-contact-link">고객센터</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>고객지원</h4>
+          <ul>
+            <li><a href="#" id="footer-manual-link">제품 사용설명서</a></li>
+            <li><a href="#" id="footer-as-link">A/S 신청</a></li>
+            <li><a href="#" id="footer-faq-link">자주 묻는 질문</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 SENSCE Co., Ltd. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#" id="footer-privacy-link">개인정보처리방침</a>
+        <a href="#" id="footer-terms-link">이용약관</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
