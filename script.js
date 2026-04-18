@@ -1,5 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 네비게이션 스크롤 효과
+  // --- 테마 토글 (다크/라이트 모드) ---
+  const themeToggle = document.getElementById('theme-toggle-btn');
+  const themeIcon = document.getElementById('theme-icon');
+  
+  // 로컬 스토리지에서 테마 불러오기
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  updateThemeIcon(savedTheme);
+
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme);
+  });
+
+  function updateThemeIcon(theme) {
+    themeIcon.innerText = theme === 'light' ? '🌙' : '☀️';
+  }
+
+  // --- 네비게이션 스크롤 효과 ---
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
@@ -9,7 +31,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 히어로 슬라이더
+  // --- 스크롤 리빌 애니메이션 (Reveal) ---
+  const revealElements = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  // --- 히어로 슬라이더 ---
   const slides = document.querySelectorAll('.hero-slide');
   const indicators = document.querySelectorAll('.indicator');
   let currentSlide = 0;
@@ -28,10 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
     goToSlide(next);
   }
 
-  // 자동 슬라이드
   slideInterval = setInterval(nextSlide, 5000);
 
-  // 인디케이터 클릭
   indicators.forEach((indicator, index) => {
     indicator.addEventListener('click', () => {
       clearInterval(slideInterval);
@@ -40,54 +72,71 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 스크롤 시 통계 숫자 카운트업 애니메이션
+  // --- 스마트 대시보드 시뮬레이션 ---
+  const dashBtns = document.querySelectorAll('.ctrl-btn');
+  dashBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      dashBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // 가짜 알림
+      const label = btn.querySelector('span:last-child').innerText;
+      console.log(`Command sent: ${label}`);
+    });
+  });
+
+  // 배터리 & 면적 랜덤 변화 시뮬레이션
+  const batteryEl = document.getElementById('dash-battery');
+  const areaEl = document.getElementById('dash-area');
+  let battery = 85;
+  let area = 42;
+
+  setInterval(() => {
+    if (Math.random() > 0.7) {
+      battery = Math.max(0, battery - 1);
+      area += 1;
+      batteryEl.innerText = `${battery}%`;
+      areaEl.innerText = `${area}㎡`;
+    }
+  }, 3000);
+
+  // --- 스펙 카운터 섹션 ---
   const statNumbers = document.querySelectorAll('.stat-number');
+  const statsSection = document.getElementById('stats');
   let animated = false;
 
-  function animateStats() {
-    if (animated) return;
-    
-    statNumbers.forEach(stat => {
-      const target = parseInt(stat.getAttribute('data-target'));
-      const duration = 2000; // 2초
-      const stepTime = Math.abs(Math.floor(duration / target));
-      let current = 0;
-      
-      const timer = setInterval(() => {
-        current += Math.ceil(target / 50);
-        if (current >= target) {
-          stat.innerText = target;
-          clearInterval(timer);
-        } else {
-          stat.innerText = current;
-        }
-      }, stepTime);
-    });
-    animated = true;
-  }
+  const statsObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting && !animated) {
+      statNumbers.forEach(stat => {
+        const target = parseInt(stat.getAttribute('data-target'));
+        const duration = 2000;
+        let current = 0;
+        const timer = setInterval(() => {
+          current += Math.ceil(target / 50);
+          if (current >= target) {
+            stat.innerText = target;
+            clearInterval(timer);
+          } else {
+            stat.innerText = current;
+          }
+        }, 40);
+      });
+      animated = true;
+    }
+  }, { threshold: 0.5 });
+  
+  if (statsSection) statsObserver.observe(statsSection);
 
-  // Intersection Observer를 사용하여 통계 섹션이 화면에 보일 때 애니메이션 실행
-  const statsSection = document.getElementById('stats');
-  if (statsSection) {
-    const observer = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        animateStats();
-      }
-    }, { threshold: 0.5 });
-    observer.observe(statsSection);
-  }
-
-  // 부드러운 스크롤 (네비게이션 링크)
+  // --- 부드러운 스크롤 ---
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
       const targetId = this.getAttribute('href');
       if (targetId === '#') return;
-      
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
         window.scrollTo({
-          top: targetElement.offsetTop - 80, // 네비게이션 바 높이만큼 여백
+          top: targetElement.offsetTop - 80,
           behavior: 'smooth'
         });
       }
@@ -95,20 +144,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// 폼 제출 처리 (가짜 전송)
 function handleSubmit(event) {
   event.preventDefault();
   const form = document.getElementById('contact-form');
   const successMsg = document.getElementById('contact-success');
-  
-  // 폼 숨기고 성공 메시지 표시
   form.style.display = 'none';
   successMsg.style.display = 'block';
-  
-  // 입력값 초기화
   form.reset();
-  
-  // 3초 후 원래대로 복구 (데모용)
   setTimeout(() => {
     successMsg.style.display = 'none';
     form.style.display = 'block';

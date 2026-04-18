@@ -31,10 +31,15 @@
         <li><a href="#detail-2" class="nav-link" id="nav-detail2">독 시리즈</a></li>
         <li><a href="#contact" class="nav-link" id="nav-contact">문의</a></li>
       </ul>
-      <button class="nav-cta" id="nav-cta-btn">구매하기</button>
-      <button class="hamburger" id="hamburger-btn" aria-label="메뉴 열기">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-right">
+        <button class="theme-toggle" id="theme-toggle-btn" aria-label="테마 변경">
+          <span id="theme-icon">🌙</span>
+        </button>
+        <button class="nav-cta" id="nav-cta-btn">구매하기</button>
+        <button class="hamburger" id="hamburger-btn" aria-label="메뉴 열기">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -105,7 +110,7 @@
   </div>
 
   <!-- 제품 하이라이트 섹션 -->
-  <section class="products" id="products">
+  <section class="products reveal" id="products">
     <div class="section-header">
       <p class="section-eyebrow">OUR PRODUCTS</p>
       <h2 class="section-title">당신의 라이프스타일을<br />위한 선택</h2>
@@ -154,7 +159,7 @@
   </section>
 
   <!-- 스펙 카운터 섹션 -->
-  <section class="stats" id="stats">
+  <section class="stats reveal" id="stats">
     <div class="stats-grid">
       <div class="stat-item" id="stat-1">
         <span class="stat-number" data-target="99">0</span><span class="stat-unit">%</span>
@@ -176,7 +181,7 @@
   </section>
 
   <!-- 상세페이지 1: 스테이션 시리즈 -->
-  <section class="detail-section" id="detail-1">
+  <section class="detail-section reveal" id="detail-1">
     <div class="detail-eyebrow-wrap">
       <p class="section-eyebrow">STATION SERIES</p>
     </div>
@@ -230,7 +235,7 @@
   </section>
 
   <!-- 상세페이지 2: 독 시리즈 -->
-  <section class="detail-section detail-section--dark" id="detail-2">
+  <section class="detail-section detail-section--dark reveal" id="detail-2">
     <div class="detail-eyebrow-wrap">
       <p class="section-eyebrow light">DOCK SERIES</p>
     </div>
@@ -286,8 +291,63 @@
     </div>
   </section>
 
+  <!-- 스마트 대시보드 시뮬레이션 -->
+  <section class="dashboard reveal" id="dashboard">
+    <div class="section-header">
+      <p class="section-eyebrow">SMART CONTROL</p>
+      <h2 class="section-title">손끝에서 시작되는<br />완벽한 관리</h2>
+      <p class="section-desc">SENSCE 앱으로 어디서든 집안 상태를 확인하고 제어하세요.</p>
+    </div>
+    <div class="dash-container">
+      <div class="dash-status">
+        <div class="status-header">
+          <span class="status-badge">현재 청소 중</span>
+          <h3 class="status-title">거실 청소 중</h3>
+          <p class="status-label">남은 시간: 약 12분</p>
+        </div>
+        <div class="status-grid">
+          <div class="status-card">
+            <span class="status-val" id="dash-battery">85%</span>
+            <span class="status-label">배터리</span>
+          </div>
+          <div class="status-card">
+            <span class="status-val" id="dash-area">42㎡</span>
+            <span class="status-label">청소 면적</span>
+          </div>
+          <div class="status-card">
+            <span class="status-val">Normal</span>
+            <span class="status-label">흡입 모드</span>
+          </div>
+          <div class="status-card">
+            <span class="status-val">Good</span>
+            <span class="status-label">필터 상태</span>
+          </div>
+        </div>
+      </div>
+      <div class="dash-controls">
+        <div class="map-visual">
+          <div class="cleaning-bot">SENSCE</div>
+        </div>
+        <div class="control-btns">
+          <button class="ctrl-btn active" id="btn-play">
+            <span>⏸</span>
+            <span>일시정지</span>
+          </button>
+          <button class="ctrl-btn" id="btn-home">
+            <span>🏠</span>
+            <span>충전 복귀</span>
+          </button>
+          <button class="ctrl-btn" id="btn-empty">
+            <span>🗑</span>
+            <span>먼지 비움</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 문의 / CTA 섹션 -->
-  <section class="contact" id="contact">
+  <section class="contact reveal" id="contact">
     <div class="contact-inner">
       <p class="section-eyebrow">CONTACT US</p>
       <h2 class="contact-title">지금 바로 경험해보세요</h2>
